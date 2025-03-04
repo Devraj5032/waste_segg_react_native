@@ -10,7 +10,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "eas-build-preinstall": "npm install --legacy-peer-deps"
+    "eas-build-pre-install": "npm config set legacy-peer-deps true"
   },
   "jest": {
     "preset": "jest-expo"
