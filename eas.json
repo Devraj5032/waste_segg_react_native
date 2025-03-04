@@ -1,8 +1,15 @@
 {
+  "cli": {
+    "version": ">=0.48.0"
+  },
   "build": {
     "preview": {
       "android": {
         "buildType": "apk",
+        "distribution": "internal",
+        "node": "18.17.0",
+        "yarn": "1.22.19",
+        "gradleCommand": ":app:assembleDebug",
         "env": {
           "EAS_BUILD_NPM_INSTALL_COMMAND": "npm install --legacy-peer-deps"
         }
@@ -11,6 +18,9 @@
     "preview2": {
       "android": {
         "gradleCommand": ":app:assembleRelease",
+        "distribution": "internal",
+        "node": "18.17.0",
+        "yarn": "1.22.19",
         "env": {
           "EAS_BUILD_NPM_INSTALL_COMMAND": "npm install --legacy-peer-deps"
         }
@@ -18,13 +28,21 @@
     },
     "preview3": {
       "developmentClient": true,
+      "node": "18.17.0",
+      "yarn": "1.22.19",
       "env": {
         "EAS_BUILD_NPM_INSTALL_COMMAND": "npm install --legacy-peer-deps"
       }
     },
     "production": {
-      "env": {
-        "EAS_BUILD_NPM_INSTALL_COMMAND": "npm install --legacy-peer-deps"
+      "android": {
+        "gradleCommand": ":app:assembleRelease",
+        "distribution": "store",
+        "node": "18.17.0",
+        "yarn": "1.22.19",
+        "env": {
+          "EAS_BUILD_NPM_INSTALL_COMMAND": "npm install --legacy-peer-deps"
+        }
       }
     }
   }
