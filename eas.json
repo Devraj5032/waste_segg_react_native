@@ -1,21 +1,31 @@
 {
-  "cli": {
-    "npm": "npm install --legacy-peer-deps"
-  },
   "build": {
     "preview": {
       "android": {
-        "buildType": "apk"
+        "buildType": "apk",
+        "env": {
+          "EAS_BUILD_NPM_INSTALL_COMMAND": "npm install --legacy-peer-deps"
+        }
       }
     },
     "preview2": {
       "android": {
-        "gradleCommand": ":app:assembleRelease"
+        "gradleCommand": ":app:assembleRelease",
+        "env": {
+          "EAS_BUILD_NPM_INSTALL_COMMAND": "npm install --legacy-peer-deps"
+        }
       }
     },
     "preview3": {
-      "developmentClient": true
+      "developmentClient": true,
+      "env": {
+        "EAS_BUILD_NPM_INSTALL_COMMAND": "npm install --legacy-peer-deps"
+      }
     },
-    "production": {}
+    "production": {
+      "env": {
+        "EAS_BUILD_NPM_INSTALL_COMMAND": "npm install --legacy-peer-deps"
+      }
+    }
   }
 }
